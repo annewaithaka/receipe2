@@ -43,7 +43,7 @@ def get_current_user():
     user_id = session.get("user_id")
     if not user_id:
         return jsonify({'user unauthorized'}),401
-    user = user.query.filter_by(id=user_id).first()
+    user = UserModel.query.filter_by(id=user_id).first()
     return jsonify({
         "name": user.name,
         "email": user.email
