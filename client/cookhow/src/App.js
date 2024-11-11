@@ -1,31 +1,22 @@
-
-import './App.css';
-import Nav from './components/Nav.js';
-import { BrowserRouter,Route,Routes, } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import Discover from './components/Discover';
-
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Nav from './components/Nav'; // Ensure correct path
+import Home from './components/Home'; // Ensure correct path
+import Login from './components/Login'; // Ensure correct path
+import Register from './components/Register'; // Ensure correct path
 
 function App() {
-  return (
-   <div>
-     
-    <BrowserRouter>
-    <Nav/>
-     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/Discover" element={<Discover />} />
-      
-     
-     </Routes>
-    </BrowserRouter>
+  const [user, setUser] = useState(null);
 
-   
-    </div>
+  return (
+    <Router>
+      <Nav user={user} />
+      <Routes>
+        <Route path="/" element={<Home user={user} setUser={setUser} />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/register" element={<Register setUser={setUser} />} />
+      </Routes>
+    </Router>
   );
 }
 

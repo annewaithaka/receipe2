@@ -2,25 +2,35 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import log2 from '../assets/log2.png';
 
-function Nav() {
+function Nav({ user }) {
   return (
-    <div className='h-20 justify-between bg-slate-600 rounded-md m-3 w-full flex flex-row items-center'>
-      <div className='w-40 bg-slate-300 rounded-md justify-center items-center flex'>
-        <img src={log2} alt='logo' className='h-10 w-10 ml-4 rounded-lg' />
+    <div className="h-20 max-w-7xl mx-auto p-6 bg-slate-700 rounded-lg shadow-lg m-4 flex items-center justify-between px-6">
+      {/* Logo Section */}
+      <div className="flex items-center space-x-3">
+        <img src={log2} alt="logo" className="h-12 w-12 rounded-lg" />
+        <span className="text-white text-2xl ml-20 font-bold">LEARN HOW TO PREPARE DELICIOUS MEALS</span>
       </div>
-      <div className='text-slate-100 font-sans font-extrabold w-30  flex'>
-        <Link to='/'>Home</Link>
-         </div>
-         <div className='text-slate-100 font-sans font-extrabold w-30  flex'>
-            <Link to='/Discover'>Discover</Link>
-         </div>
-         <div className='text-slate-100 font-sans font-extrabold w-30  flex'>
-            <Link to='/Discover'>Sign-up</Link>
-         </div>
-         <div className='text-slate-100 font-sans font-extrabold w-30  flex'>
-            <Link to='/Discover'>Log-in</Link>
-         </div>
-      
+
+      {/* Navigation Links */}
+      <div className="flex items-center space-x-6">
+        {!user ? (
+          <>
+            <Link to="/Login" className="text-slate-100 font-semibold hover:text-blue-300 transition-colors">
+              Login
+            </Link>
+            <Link to="/Register" className="text-slate-100 font-semibold hover:text-blue-300 transition-colors">
+              Register
+            </Link>
+          </>
+        ) : (
+          <div className="flex items-center space-x-4">
+            <span className="text-slate-100 font-semibold">{user.name}</span>
+            <div className="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center">
+              {user.name.charAt(0).toUpperCase()}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
