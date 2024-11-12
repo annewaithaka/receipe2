@@ -24,6 +24,9 @@ function Nav({ user }) {
             <Link to="/MealGrid" className="text-slate-100 font-semibold hover:text-blue-300 transition-colors">
             Discover
             </Link>
+            <Link to="/" className="text-slate-100 font-semibold hover:text-blue-300 transition-colors">
+            Home
+            </Link>
           </>
         ) : (
           <div className="flex items-center space-x-4">
