@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Meals from './Meals';
+// import Meals from './Meals';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import MealGrid from './MealGrid';
 
 const Home = () => {
   const [user, setUser] = useState(null);
@@ -26,7 +27,7 @@ const Home = () => {
       {user ? (
         <div>
           <h1>You are logged in... {user.name}</h1>
-          <Meals />
+          <MealGrid />
         </div>
       ) : (
         <div>

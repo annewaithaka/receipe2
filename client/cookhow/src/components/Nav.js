@@ -21,6 +21,9 @@ function Nav({ user }) {
             <Link to="/Register" className="text-slate-100 font-semibold hover:text-blue-300 transition-colors">
               Register
             </Link>
+            <Link to="/MealGrid" className="text-slate-100 font-semibold hover:text-blue-300 transition-colors">
+            Discover
+            </Link>
           </>
         ) : (
           <div className="flex items-center space-x-4">
