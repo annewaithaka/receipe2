@@ -57,6 +57,7 @@ function Nav({ user }) {
         <Link to="/MealGrid">Discover</Link>
         <Link to="/Contact">Contact Us</Link>
         <Link to="/About">About Us</Link>
+        <Link to="/Discover">Discover Us</Link>
       </div>
 
       {/* Buttons Section */}

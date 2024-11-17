@@ -9,6 +9,8 @@ import ExternalLinkPage from './components/ExternalLinkPage'; // Ensure correct 
 import About from './components/About';
 import Contact from './components/Contact';
 import DetailedFood from './components/DetailedFood';
+import Discover from './components/Discover';
+import ProfilePage from './components/ProfilePage';
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="/foods/:id" element={<DetailedFood />} />
+        <Route path="/discover" element={<Discover />} />
+        <Route path="/profilepage" element={<ProfilePage />} />
 
       </Routes>
     </Router>

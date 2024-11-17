@@ -1,27 +1,27 @@
 import React from "react";
 import "./ProfilePage.css";
 
-const Navbar = () => {
-  return (
-    <nav className="navbar">
-      <div className="logo">
-        <img src="https://placeholder.pics/svg/70x59" alt="Logo" />
-        <span className="logo-text">Recipe Room</span>
-      </div>
-      <ul className="nav-links">
-        <li>Home</li>
-        <li>Recipes</li>
-        <li>About us</li>
-      </ul>
-      <div className="nav-actions">
-        <img src="https://placeholder.pics/svg/24x24" alt="Notifications" />
-        <img src="https://placeholder.pics/svg/24x24" alt="Messages" />
-        <div className="avatar">L</div>
-        <span>Welcome Larry</span>
-      </div>
-    </nav>
-  );
-};
+// const Navbar = () => {
+//   return (
+//     <nav className="navbar">
+//       <div className="logo">
+//         <img src="https://placeholder.pics/svg/70x59" alt="Logo" />
+//         <span className="logo-text">Recipe Room</span>
+//       </div>
+//       <ul className="nav-links">
+//         <li>Home</li>
+//         <li>Recipes</li>
+//         <li>About us</li>
+//       </ul>
+//       <div className="nav-actions">
+//         <img src="https://placeholder.pics/svg/24x24" alt="Notifications" />
+//         <img src="https://placeholder.pics/svg/24x24" alt="Messages" />
+//         <div className="avatar">L</div>
+//         <span>Welcome Larry</span>
+//       </div>
+//     </nav>
+//   );
+// };
 
 const ProfileSection = () => {
   return (
@@ -183,7 +183,7 @@ function ProfilePage() {
 
   return (
     <div className="ProfilePage">
-      <Navbar />
+      {/* <Navbar /> */}
       <ProfileSection />
       <ActivitySection />
       <div className="recipe-grid">

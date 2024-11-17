@@ -66,6 +66,7 @@ import React, { useState } from 'react';
 import HttpClient from './HttpClient';
 import "./Login.css"; // Include styling from the second repo
 import signIn_pic from "../assets/signIn_pic.png";
+import { Link } from "react-router-dom";
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -126,9 +127,12 @@ function Login() {
                         />
                     </div>
 
+                    
+                    <Link to="/profilepage">
                     <button type="submit" className="sign-in-button">
                         Log-in
                     </button>
+            </Link>
                 </form>
             </div>
         </div>

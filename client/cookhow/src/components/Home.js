@@ -111,20 +111,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Search Bar Section */}
-      <div className="search-bar">
-        <img src={searchIcon} alt="Search Icon" className="search-icon" />
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)} // Update state on input change
-        />
-        <button className="search-button" onClick={handleSearch}>
-          Search
-        </button>
-      </div>
+      
 
       {/* Dynamic Content */}
       <div>
