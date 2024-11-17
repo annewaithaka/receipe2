@@ -64,6 +64,8 @@
 
 import React, { useState } from 'react';
 import HttpClient from './HttpClient';
+import "./Login.css"; // Include styling from the second repo
+import signIn_pic from "../assets/signIn_pic.png";
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -91,11 +93,12 @@ function Login() {
         <div className="sign-in-modal">
             {/* Left Image Section */}
             <div className="left-image-section">
+            <img src={signIn_pic} alt="Welcome" className="left-image" />
                 <div className="welcome-text">
                     <h1>Welcome Back</h1>
                     <p>Please log in to continue</p>
                 </div>
-            </div>
+                </div>
 
             {/* Sign In Form Section */}
             <div className="sign-in-form">
