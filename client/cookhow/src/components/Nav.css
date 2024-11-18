@@ -1,4 +1,14 @@
 /* Navbar styles */
+/* Mobile-only visibility */
+@media (max-width: 768px) {
+  /* .header_top_main { */
+  .login.logo-text.mobile-navbar.navbar.navbar-buttons.navbar-links.navbar-logo.signup{
+      display: none; /* Hide desktop navbar */
+  }
+  .mobile-navbar {
+      display: flex;
+  }
+}
 .navbar {
     position: sticky; /* Makes the navbar stick to the top */
     top: 0; /* Aligns it to the top of the viewport */
@@ -51,7 +61,7 @@
     cursor: pointer;
   }
   
-  
+
   .signup {
     background-color: #4c2d4e;
     color: white;

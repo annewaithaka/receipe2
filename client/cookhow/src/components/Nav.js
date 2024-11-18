@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 // import log2 from '../assets/log2.png';
 import "./Nav.css";
 import log2 from '../assets/logo.png';
+import MenuItems from "./MenuItems";
 
 
 
@@ -46,6 +47,8 @@ function Nav({ user }) {
 
   return (
     <div className="navbar">
+          <MenuItems/>
+
       {/* Logo Section */}
       <div className="navbar-logo">
         <img src={log2} alt="logo" />

@@ -8,7 +8,6 @@ import searchIcon from "../assets/search1.png";
 
 
 
-
 const Discover = () => {
   
   const [searchQuery, setSearchQuery] = useState("");
@@ -48,9 +47,6 @@ const Discover = () => {
           Search
         </button>
       </div>
-
-      
-
       <MealGrid />
     </div>
   )
