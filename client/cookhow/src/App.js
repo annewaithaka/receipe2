@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav'; // Ensure correct path
 import Home from './components/Home'; // Ensure correct path
@@ -10,11 +10,32 @@ import About from './components/About';
 import Contact from './components/Contact';
 import DetailedFood from './components/DetailedFood';
 import Discover from './components/Discover';
-import ProfilePage from './components/ProfilePage';
+
+// import Display from './components/Display';
+import axios from "axios";
+import RecipeGrid from './components/RecipeGrid';
+import Rep from './components/Rep';
+import ProfileSection from './components/ProfileSection';
+
 
 
 function App() {
   const [user, setUser] = useState(null);
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/@me", {
+          withCredentials: true, // Include cookies for authentication
+        });
+        setUser(response.data); // Assuming response.data contains user info
+      } catch (error) {
+        console.error("Failed to fetch user:", error);
+        setUser(null); // Ensure user is set to null if not logged in
+      }
+    };
+
+    fetchUser();
+  }, []);
 
   return (
     <Router>
@@ -29,7 +50,14 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="/foods/:id" element={<DetailedFood />} />
         <Route path="/discover" element={<Discover />} />
-        <Route path="/profilepage" element={<ProfilePage />} />
+        <Route path="/ProfileSection " element={<ProfileSection />} />
+        <Route path="/RecipeGrid" element={<RecipeGrid />} />
+        <Route path="/recipe/:id" element={<Rep />} />
+
+
+       
+
+        {/* <Route path="/" element={<Display user={user} setUser={setUser} />} /> */}
 
       </Routes>
     </Router>

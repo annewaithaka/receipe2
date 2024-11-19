@@ -1,27 +1,5 @@
 import React from "react";
-import "./ProfilePage.css";
-
-// const Navbar = () => {
-//   return (
-//     <nav className="navbar">
-//       <div className="logo">
-//         <img src="https://placeholder.pics/svg/70x59" alt="Logo" />
-//         <span className="logo-text">Recipe Room</span>
-//       </div>
-//       <ul className="nav-links">
-//         <li>Home</li>
-//         <li>Recipes</li>
-//         <li>About us</li>
-//       </ul>
-//       <div className="nav-actions">
-//         <img src="https://placeholder.pics/svg/24x24" alt="Notifications" />
-//         <img src="https://placeholder.pics/svg/24x24" alt="Messages" />
-//         <div className="avatar">L</div>
-//         <span>Welcome Larry</span>
-//       </div>
-//     </nav>
-//   );
-// };
+import "./ProfileSection.css";
 
 const ProfileSection = () => {
   return (
@@ -30,22 +8,23 @@ const ProfileSection = () => {
         <img
           src="https://placeholder.pics/svg/304x307"
           alt="Profile"
+          className="profile-img"
         />
-        <button className="upload-btn">Upload image</button>
+        <button className="upload-btn">Upload Image</button>
       </div>
       <div className="profile-info">
-        <h2>Larry Mecha</h2>
+        <h2 className="profile-name">Larry Mecha</h2>
         <div className="bio">
-          <label>Bio</label>
-          <textarea placeholder="Your bio"></textarea>
+          <label className="bio-label">Bio</label>
+          <textarea placeholder="Write your bio..." className="bio-textarea"></textarea>
         </div>
         <div className="recipe-price">
-          <label>Total Recipe Price</label>
-          <input type="text" placeholder="Enter price" />
+          <label className="price-label">Total Recipe Price</label>
+          <input type="text" placeholder="Enter price" className="price-input" />
         </div>
         <div className="action-buttons">
           <button className="upload-recipe">Upload Recipe</button>
-          <button className="add-to-kitchen">Add to kitchen</button>
+          <button className="add-to-kitchen">Add to Kitchen</button>
         </div>
       </div>
     </section>
@@ -68,7 +47,7 @@ const ActivitySection = () => {
         {activities.map((activity, index) => (
           <div key={index} className="activity-item">
             <span>{activity}</span>
-            <span>Thur 24th Sep 00:00</span>
+            <span className="activity-time">Thur 24th Sep 00:00</span>
           </div>
         ))}
       </div>
@@ -78,7 +57,6 @@ const ActivitySection = () => {
 
 const RecipeCard = ({ title, ratings, views, image }) => {
   return (
-    
     <div className="recipe-card">
       <img src={image} alt={title} className="recipe-image" />
       <div className="recipe-content">
@@ -102,12 +80,12 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="subscribe-section">
-        <p>Join us to get latest updates on upcoming events.</p>
+        <p>Join us for the latest updates on upcoming events.</p>
         <div className="subscribe-form">
-          <input type="email" placeholder="Email address" />
-          <button>Subscribe</button>
+          <input type="email" placeholder="Enter your email" className="subscribe-input" />
+          <button className="subscribe-btn">Subscribe</button>
         </div>
-        <p>By signing up you agree to our privacy policies.</p>
+        <p>By signing up, you agree to our privacy policies.</p>
       </div>
       <div className="footer-links">
         <div>
@@ -122,19 +100,15 @@ const Footer = () => {
           <h4>Official</h4>
           <ul>
             <li>Privacy</li>
-            <li>Accessibility</li>
-            <li>FAQs</li>
             <li>Terms</li>
-            <li>Contacts</li>
+            <li>FAQ</li>
           </ul>
         </div>
         <div>
-          <h4>Social</h4>
+          <h4>Contact</h4>
           <ul>
-            <li>Recipe Room</li>
-            <li>Recipe Room</li>
-            <li>RecipeRoom@gmail.com</li>
-            <li>+254700976984</li>
+            <li>Email: RecipeRoom@gmail.com</li>
+            <li>Phone: +254700976984</li>
           </ul>
         </div>
       </div>
@@ -144,46 +118,16 @@ const Footer = () => {
 
 function ProfilePage() {
   const recipes = [
-    {
-      title: "Mojito mocktail recipe",
-      ratings: "4.5",
-      views: "200",
-      image: "https://placeholder.pics/svg/368x404"
-    },
-    {
-      title: "How to make chapaiz fam",
-      ratings: "4.5",
-      views: "200",
-      image: "https://placeholder.pics/svg/368x404"
-    },
-    {
-      title: "How to cook intestines",
-      ratings: "4.5",
-      views: "200",
-      image: "https://placeholder.pics/svg/368x404"
-    },
-    {
-      title: "Tasty garlic butter thighs",
-      ratings: "4.5",
-      views: "200",
-      image: "https://placeholder.pics/svg/368x404"
-    },
-    {
-      title: "English fish and chips recipe",
-      ratings: "4.5",
-      views: "200",
-      image: "https://placeholder.pics/svg/368x404"
-    },
-    {
-      title: "How to make air fried pork ribs",
-      ratings: "4.5",
-      views: "200",
-      image: "https://placeholder.pics/svg/368x404"
-    }];
+    { title: "Mojito Mocktail", ratings: "4.5", views: "200", image: "https://placeholder.pics/svg/368x404" },
+    { title: "Chapaiz Fam", ratings: "4.5", views: "200", image: "https://placeholder.pics/svg/368x404" },
+    { title: "Intestines Recipe", ratings: "4.5", views: "200", image: "https://placeholder.pics/svg/368x404" },
+    { title: "Garlic Butter Thighs", ratings: "4.5", views: "200", image: "https://placeholder.pics/svg/368x404" },
+    { title: "Fish & Chips", ratings: "4.5", views: "200", image: "https://placeholder.pics/svg/368x404" },
+    { title: "Air Fried Pork Ribs", ratings: "4.5", views: "200", image: "https://placeholder.pics/svg/368x404" }
+  ];
 
   return (
-    <div className="ProfilePage">
-      {/* <Navbar /> */}
+    <div className="profile-page">
       <ProfileSection />
       <ActivitySection />
       <div className="recipe-grid">

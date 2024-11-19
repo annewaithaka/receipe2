@@ -3,14 +3,13 @@ import { useNavigate, Link } from "react-router-dom"; // Updated imports for rou
 import axios from "axios";
 import "./Home.css"; // Include styling from the second repo
 import heroImage from "../assets/hero1.jpeg";
+import searchIcon from "../assets/search1.png";
+import MealGrid from "./MealGrid";
+import Posts from "./Posts";
 
-import RecipeGrid from "./RecipeGrid";
-// import MealGrid from "./MealGrid";
-// import Posts from "./Posts";
-
-const Home = () => {
+const Display = () => {
   const [user, setUser] = useState(null);
-  // const [searchQuery, setSearchQuery] = useState(""); // State for search functionality
+  const [searchQuery, setSearchQuery] = useState(""); // State for search functionality
   const navigate = useNavigate();
 
   // Check user authentication on component mount
@@ -28,17 +27,17 @@ const Home = () => {
     })();
   }, [navigate]);
 
-  // const handleSearch = () => {
-  //   console.log("Search query: ", searchQuery);
-  //   // You can integrate search filtering here
-  // };
+  const handleSearch = () => {
+    console.log("Search query: ", searchQuery);
+    // You can integrate search filtering here
+  };
 
   return (
     <div>
       {/* Hero Section */}
       <section className="hero-section">
         <div className="content">
-          <h1>Where Taste Meets Perfection.🍜🍣🍟🥑</h1>
+          <h1>Where Taste Meets Perfection.</h1>
           <p>
             Let your cooking find its way to new heights by posting in this
             global kitchen.
@@ -72,10 +71,9 @@ const Home = () => {
       <div>
         {user ? (
           <div>
-            <h1 className="h1">Welcome , {user.name}! 🍔🥞🥗🍗🥩</h1>
-            {/* <Posts />
-            <MealGrid /> */}
-            <RecipeGrid/>
+            <h1>Welcome , {user.name}!</h1>
+            <Posts />
+            <MealGrid />
           </div>
         ) : (
           <div>
@@ -98,9 +96,9 @@ const Home = () => {
         <div className="footer-links">
           <div className="footer-column">
             <h4>Navigate</h4>
-            <a href="/">Home</a>
-            <a href="Discover">Recipes</a>
-            <a href="About">About Us</a>
+            <a href="#">Home</a>
+            <a href="#">Recipes</a>
+            <a href="#">About Us</a>
           </div>
           <div className="footer-column">
             <h4>Official</h4>
@@ -123,5 +121,5 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Display;
 

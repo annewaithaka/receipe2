@@ -44,8 +44,8 @@ const About = () => {
         <div className="footer-links">
           <div className="footer-column">
             <h4>Navigate</h4>
-            <a href="#">Home</a>
-            <a href="#">Recipes</a>
+            <a href="/">Home</a>
+            <a href="Discover">Recipes</a>
             <a href="#">About Us</a>
           </div>
 

@@ -1,79 +1,94 @@
-/* Navbar styles */
-/* Mobile-only visibility */
-@media (max-width: 768px) {
-  /* .header_top_main { */
-  .login.logo-text.mobile-navbar.navbar.navbar-buttons.navbar-links.navbar-logo.signup{
-      display: none; /* Hide desktop navbar */
-  }
-  .mobile-navbar {
-      display: flex;
-  }
-}
+/* Navbar General Styles */
 .navbar {
-    position: sticky; /* Makes the navbar stick to the top */
-    top: 0; /* Aligns it to the top of the viewport */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #2d242f; /* Dark background */
-    border-radius: 10px; /* Rounded corners */
-    margin: 0 10px;
-    z-index: 1000; /* Ensure it stays above other content */
-  }
-  
-  .navbar-logo {
-    display: flex;
-    width: 150px;
-    height: auto;
-    align-items: center;
-    margin-right: 20px;
-    margin-left: -130px;
-    gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #201f1f;
+  padding: 10px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 5%;
+}
 
-  }
-  
-  .logo-text {
-    font-family: 'Oregano', sans-serif;
-    font-size: 40px;
-    color: #604461;
-  }
-  
-  .navbar-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-  }
-  
-  .navbar-links a {
-    text-decoration: none;
-    color: #fff; /* White text */
-    font-size: 18px;
-    font-weight:400;
-  }
-  
-  .navbar-buttons {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .signup, .login {
-    padding: 8px 24px;
-    border-radius: 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
+.navbar-logo img {
+  height: 50px;
+  border-radius: 10%;
+}
 
-  .signup {
-    background-color: #4c2d4e;
-    color: white;
-    border: none;
-  }
-  
-  .login {
-    background-color: transparent;
-    border: 1px solid #4c2d4e;
-    color: #d090d4;
-  }
-  
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #007bff;
+}
+
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* User Info Section */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.user-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Buttons */
+.signup, .login {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.signup {
+  background-color: #007bff;
+  color: white;
+}
+
+.signup:hover {
+  background-color: #0056b3;
+}
+
+.login {
+  background-color: #28a745;
+  color: white;
+}
+
+.login:hover {
+  background-color: #218838;
+}

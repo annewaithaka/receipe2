@@ -1,20 +1,17 @@
-import React, {useState } from "react";
+
 import MealGrid from './MealGrid'
 import {Link } from "react-router-dom"; // Updated imports for routing
 import heroIcon from "../assets/arrow.png";
 import top1 from "../assets/top1.png";
 import "./Discover.css"; // Include styling from the second repo
-import searchIcon from "../assets/search1.png";
+
+import Posts from "./Posts";
 
 
 
 const Discover = () => {
   
-  const [searchQuery, setSearchQuery] = useState("");
-  const handleSearch = () => {
-    console.log("Search query: ", searchQuery);
-    // You can integrate search filtering here
-  };
+  
 
   return (
     <div>
@@ -33,21 +30,9 @@ const Discover = () => {
         </div>
       </section>
 
-      {/* Search Bar Section */}
-      <div className="search-bar">
-        <img src={searchIcon} alt="Search Icon" className="search-icon" />
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)} // Update state on input change
-        />
-        <button className="search-button" onClick={handleSearch}>
-          Search
-        </button>
-      </div>
       <MealGrid />
+      <Posts />
+      
     </div>
   )
 }
