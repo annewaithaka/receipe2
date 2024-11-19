@@ -27,7 +27,10 @@
     width: 150px;
     height: auto;
     align-items: center;
+    margin-right: 20px;
+    margin-left: -130px;
     gap: 10px;
+
   }
   
   .logo-text {

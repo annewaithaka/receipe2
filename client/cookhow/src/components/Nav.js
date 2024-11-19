@@ -61,6 +61,8 @@ function Nav({ user }) {
         <Link to="/Contact">Contact Us</Link>
         <Link to="/About">About Us</Link>
         <Link to="/Discover">Discover Us</Link>
+        <Link to="/ProfilePage">Profile</Link>
+
       </div>
 
       {/* Buttons Section */}
