@@ -15,7 +15,8 @@ import Discover from './components/Discover';
 import axios from "axios";
 import RecipeGrid from './components/RecipeGrid';
 import Rep from './components/Rep';
-import ProfileSection from './components/ProfileSection';
+
+// import ProfileSection from './components/ProfileSection';
 
 
 
@@ -39,7 +40,7 @@ function App() {
 
   return (
     <Router>
-      <Nav user={user} />
+      <Nav user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home user={user} setUser={setUser} />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
@@ -50,9 +51,10 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="/foods/:id" element={<DetailedFood />} />
         <Route path="/discover" element={<Discover />} />
-        <Route path="/ProfileSection " element={<ProfileSection />} />
+        {/* <Route path="/ProfileSection " element={<ProfileSection />} /> */}
         <Route path="/RecipeGrid" element={<RecipeGrid />} />
         <Route path="/recipe/:id" element={<Rep />} />
+      
 
 
        

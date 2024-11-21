@@ -1,10 +1,25 @@
-import React from 'react';
+import React from 'react'; 
 import { Link } from 'react-router-dom';
+import axios from 'axios'; // Import axios for API calls
 import "./Nav.css";
 import log2 from '../assets/logo.png';
 import MenuItems from "./MenuItems";
 
-function Nav({ user }) {
+
+
+
+function Nav({ user, setUser }) {
+  const handleLogout = async () => {
+    try {
+      await axios.post("http://localhost:5000/logout", {}, { withCredentials: true });
+      setUser(null); // Clear the user state
+      alert("Successfully logged out!");
+    } catch (error) {
+      console.error("Logout failed:", error);
+      alert("Logout failed. Please try again.");
+    }
+  };
+
   return (
     <div className="navbar">
       <MenuItems />
@@ -20,7 +35,8 @@ function Nav({ user }) {
         <Link to="/Discover">Discover Us</Link>
         <Link to="/About">About Us</Link>
         <Link to="/Contact">Contact Us</Link>
-        <Link to="/ProfileSection ">Profile</Link>
+        {/* <Link to="/Me">Profile</Link> */}
+        {/* <Link to="/Prof">Profile</Link> */}
       </div>
 
       {/* User Section */}
@@ -36,8 +52,10 @@ function Nav({ user }) {
           </>
         ) : (
           <div className="user-info">
-            <div className="user-avatar">{user.name.charAt(0).toUpperCase()}</div>
-            {/* <span className="user-name">{user.name}</span> */}
+            <div className="user-avatar">{user.name.charAt(0).toUpperCase()}
+              
+            </div>
+            <button onClick={handleLogout} className="logout-button">Logout</button>
           </div>
         )}
       </div>

@@ -30,8 +30,9 @@ const Discover = () => {
         </div>
       </section>
 
-      <MealGrid />
+      
       <Posts />
+      <MealGrid />
       
     </div>
   )
