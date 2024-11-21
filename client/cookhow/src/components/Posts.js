@@ -65,11 +65,11 @@ const Posts = () => {
     };
    
 
-    const likeFood = async (id, userId) => {
+    const likeFood = async (id, ) => {
         try {
             const response = await axios.patch(
                 `//localhost:5000/foods/${id}/like`, 
-                {}, 
+                {userId}, 
                 { headers: { 'Content-Type': 'application/json' } }
             );
 
